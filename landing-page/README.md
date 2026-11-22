@@ -66,6 +66,7 @@ landing-page/
 
 1. **Nav.** Fixed, turns dark over dark sections, and has a scroll progress bar.
 2. **Hero.** Headline, résumé or LinkedIn input, benefit points, and a scrolling strip of company logos and role names.
+   The hero background is a pixel field: each face that appears sends a ripple of small squares across it. It stays clear of the text and form, and is static on phones and with reduced motion.
 3. **How it works** (dark). Three steps; on desktop the product card changes as you scroll.
 4. **Stories.** An auto-playing carousel of example before-and-after profiles.
 5. **Features.** Résumé insight, apply options and a job-support chat.
@@ -88,6 +89,7 @@ All copy is plain HTML in `index.html`. The interactive parts are driven by smal
 | `CITIES` | Locations shown on role cards |
 | `CM` | Job-support chat messages |
 | `roles` / `LOGOS` | Hero strip role names and company logos |
+| `HERO_PEOPLE` | Faces that pop in around the hero headline (name, what happened, photo) |
 
 ## Sign-in, sign-up and onboarding
 

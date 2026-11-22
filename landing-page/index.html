@@ -161,16 +161,13 @@ ul,ol{list-style:none}
 /* =========================================================
    Hero
    ========================================================= */
-.hero{position:relative;padding-top:clamp(128px,16vh,176px);display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.hero{position:relative;padding-top:clamp(140px,19vh,204px);display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
 #heroFx{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .hero-in{text-align:center;flex:1;min-width:0;width:100%}
-.hero-eye{display:inline-flex;align-items:center;gap:8px;margin:0 auto 26px;padding:7px 14px 7px 12px;border-radius:999px;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-weight:500;line-height:1;color:var(--slate);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.hero-eye .dot{animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 5px rgba(103,158,65,.18)}}
 .hero h1{font-size:clamp(42px,5vw,74px);line-height:1.02;margin:0 auto}
-.hero h1 .h1b{display:block;font-style:italic;color:#2A6BE6;letter-spacing:-.03em}
-.hero .lede{font-size:18px;max-width:580px;margin-top:24px;text-wrap:balance}
-.ask{max-width:672px;margin:36px auto 0;display:flex;align-items:center;gap:6px;padding:7px;border:1.5px solid var(--blue);border-radius:18px;background:var(--white);box-shadow:0 0 0 6px rgba(56,128,255,.12),var(--sh-md);transition:box-shadow .2s}
+.hero h1 .h1b{display:block}
+.hero .lede{font-size:18px;max-width:580px;margin-top:30px;text-wrap:balance}
+.ask{max-width:672px;margin:44px auto 0;display:flex;align-items:center;gap:6px;padding:7px;border:1.5px solid var(--blue);border-radius:18px;background:var(--white);box-shadow:0 0 0 6px rgba(56,128,255,.12),var(--sh-md);transition:box-shadow .2s}
 .ask:focus-within{box-shadow:0 0 0 6px rgba(56,128,255,.22),var(--sh-md)}
 .ask .attach{flex:none;width:46px;height:46px;border-radius:var(--r-md);display:grid;place-items:center;color:var(--slate);cursor:pointer;transition:background-color .2s}
 .ask .attach:hover{background:var(--oat)}
@@ -185,7 +182,7 @@ ul,ol{list-style:none}
 .ask-meta.err{color:#9A3C00}
 .float-who{position:absolute;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none}
 .float-who.l{left:clamp(24px,6vw,96px);top:58%}
-.float-who.r{right:clamp(24px,6vw,96px);top:31%}
+.float-who.r{right:clamp(24px,6vw,96px);top:42%}
 .float-who .tagx{display:flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 10px;font-size:12px;font-weight:500;box-shadow:var(--sh-md);transition:opacity .35s,transform .35s var(--ease)}
 .float-who .tagx em{font-style:normal;color:var(--muted);font-weight:400}
 .float-who .tagx.swap{opacity:0;transform:translateY(4px)}
@@ -1001,7 +998,7 @@ ul,ol{list-style:none}
   .logo-tile img{height:calc(var(--h,28px)*.72)}
   .logo-tile .oa{font-size:16px}
   .role-pill{height:36px;font-size:13px}
-  .trust{padding:24px 0}
+  .trust{padding:24px 0;margin-top:44px}
   body{font-size:15px}
   .nav{height:60px}
   .drawer{top:60px}
@@ -1103,7 +1100,6 @@ ul,ol{list-style:none}
 <section class="hero" id="top">
   <canvas id="heroFx" aria-hidden="true"></canvas>
   <div class="hero-in wrap intro">
-    <p class="hero-eye"><span class="dot"></span>AI résumé analysis and job matching</p>
     <h1 class="display h1">Stop guessing which jobs fit. <span class="h1b">Start landing the ones that do.</span></h1>
     <p class="lede">Upload your résumé and see the roles you can actually land, anywhere in the world, plus the skills that close the gap.</p>
     <form class="ask" id="ask" action="https://syncmyskills.ai/auth/signup" method="get" novalidate>

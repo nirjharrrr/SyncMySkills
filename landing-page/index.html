@@ -1075,8 +1075,8 @@ ul,ol{list-style:none}
       <a href="#pricing">Pricing</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://syncmyskills.ai/auth/login" class="signin">Sign in</a>
-      <a href="https://syncmyskills.ai/auth/signup" class="cbtn mini">Get started</a>
+      <a href="/signin" class="signin">Sign in</a>
+      <a href="/signup" class="cbtn mini">Get started</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
         <svg class="ic-m" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 7h16M3 15h16"/></svg>
         <svg class="ic-x" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l12 12M17 5L5 17"/></svg>
@@ -1090,8 +1090,8 @@ ul,ol{list-style:none}
   <a class="dl" href="#teams">For hiring teams</a>
   <a class="dl" href="#pricing">Pricing</a>
   <div class="btns">
-    <a class="cbtn block" href="https://syncmyskills.ai/auth/signup"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span></a>
-    <a href="https://syncmyskills.ai/auth/login" class="btn btn-line btn-lg">Sign in</a>
+    <a class="cbtn block" href="/signup"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span></a>
+    <a href="/signin" class="btn btn-line btn-lg">Sign in</a>
   </div>
 </div>
 
@@ -1102,7 +1102,7 @@ ul,ol{list-style:none}
   <div class="hero-in wrap intro">
     <h1 class="display h1">Stop guessing which jobs fit. <span class="h1b">Start landing the ones that do.</span></h1>
     <p class="lede">Upload your résumé and see the roles you can actually land, anywhere in the world, plus the skills that close the gap.</p>
-    <form class="ask" id="ask" action="https://syncmyskills.ai/auth/signup" method="get" novalidate>
+    <form class="ask" id="ask" action="/signup" method="get" novalidate>
       <div class="ask-field"><label class="attach" for="file" title="Attach your résumé"><span class="sr">Attach your résumé</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9.5l-5.2 5.2a3.3 3.3 0 01-4.7-4.7l5.9-5.9a2.2 2.2 0 013.1 3.1l-5.8 5.8a1.1 1.1 0 01-1.6-1.6l5.2-5.2"/></svg></label>
       <input type="file" id="file" accept=".pdf,.doc,.docx" hidden>
       <input type="text" id="askIn" name="profile" placeholder="Your LinkedIn URL, or attach a résumé" aria-label="LinkedIn URL, or attach your résumé" autocomplete="url" inputmode="url"></div>
@@ -1161,7 +1161,7 @@ ul,ol{list-style:none}
           <h3>Apply, track and get interview-ready</h3>
           <div class="body"><div>
             <p>Apply in a click or with a tailored résumé. Every application moves across your board, and we remind you before each interview.</p>
-            <a class="cbtn step-cta" href="https://syncmyskills.ai/auth/signup" data-k="a"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><kbd>A</kbd></a>
+            <a class="cbtn step-cta" href="/signup" data-k="a"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><kbd>A</kbd></a>
             <div class="slot" aria-hidden="true"></div>
           </div></div>
         </li>
@@ -1262,7 +1262,7 @@ ul,ol{list-style:none}
   <div class="rx wrap">
     <div class="rx-left">
       <div class="rx-list" id="rxList" role="tablist" aria-label="Example roles"></div>
-      <a class="cbtn block c-b rx-cta" href="https://syncmyskills.ai/auth/signup" data-k="f"><span class="tile t-b"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="5.5"/><path d="M13.2 13.2L17 17"/></svg></span><span class="lbl">See roles that fit me</span><kbd>F</kbd></a>
+      <a class="cbtn block c-b rx-cta" href="/signup" data-k="f"><span class="tile t-b"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="5.5"/><path d="M13.2 13.2L17 17"/></svg></span><span class="lbl">See roles that fit me</span><kbd>F</kbd></a>
     </div>
     <div class="rx-deck" id="rxDeck"></div>
   </div>
@@ -1292,7 +1292,7 @@ ul,ol{list-style:none}
           <li><i>3</i><div><b>Apply and track, with help</b><span>A real person when you're stuck.</span></div></li>
         </ol>
         <div class="incl"><span>ATS score</span><span>Skill gaps</span><span>Ranked matches</span><span>Quick apply</span><span>Job support</span></div>
-        <a class="cbtn block" href="https://syncmyskills.ai/auth/signup" data-k="a"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><kbd>A</kbd></a>
+        <a class="cbtn block" href="/signup" data-k="a"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><kbd>A</kbd></a>
       </div>
       <div class="path team rv d1" id="teams">
         <span class="pill p-b">For hiring teams</span>
@@ -1312,7 +1312,7 @@ ul,ol{list-style:none}
   <div class="stars" id="stars" aria-hidden="true"></div>
 </section>
 </main>
-<div class="m-cta" id="mCta" aria-hidden="true"><a class="cbtn block" href="https://syncmyskills.ai/auth/signup" tabindex="-1"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><span class="free">Free</span></a></div>
+<div class="m-cta" id="mCta" aria-hidden="true"><a class="cbtn block" href="/signup" tabindex="-1"><span class="tile t-o"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4M7.5 10.5h5M7.5 13.5h3"/></svg></span><span class="lbl">Analyze my résumé</span><span class="free">Free</span></a></div>
 
 <footer class="foot" data-nav="dark">
   <div class="wrap">
@@ -1329,7 +1329,7 @@ ul,ol{list-style:none}
       </div>
       <div><h6>Product</h6><ul><li><a href="#how">How it works</a></li><li><a href="#features">Résumé analysis</a></li><li><a href="#roles">Job matching</a></li><li><a href="#support">Job support</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
       <div><h6>Resources</h6><ul><li><a href="https://syncmyskills.ai/students/">For students</a></li><li><a href="https://syncmyskills.ai/employers/">For employers</a></li><li><a href="https://syncmyskills.ai/blogs">Blog</a></li></ul></div>
-      <div><h6>Company</h6><ul><li><a href="https://syncmyskills.ai/about">About</a></li><li><a href="https://syncmyskills.ai/contact">Contact</a></li><li><a href="https://syncmyskills.ai/privacy">Privacy</a></li><li><a href="https://syncmyskills.ai/auth/login">Sign in</a></li></ul></div>
+      <div><h6>Company</h6><ul><li><a href="https://syncmyskills.ai/about">About</a></li><li><a href="https://syncmyskills.ai/contact">Contact</a></li><li><a href="https://syncmyskills.ai/privacy">Privacy</a></li><li><a href="/signin">Sign in</a></li></ul></div>
     </div>
     <div class="f-game"><div class="gh"><b>Your commute to day one</b><span>Jump the office furniture, grab the offer letters.</span></div><canvas id="game" role="img" aria-label="A small runner game. Press space or tap to jump over office furniture."></canvas><div class="gl" id="gl">Press space or tap to start</div></div>
     <div class="f-bottom"><span>© 2026 SyncMySkills. All rights reserved.</span><nav aria-label="Legal"><a href="https://syncmyskills.ai/privacy">Privacy policy</a><a href="https://syncmyskills.ai/contact">Contact</a><a href="#top" class="totop">Back to top <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10V2M2.5 5.5L6 2l3.5 3.5"/></svg></a></nav></div>
@@ -1380,7 +1380,7 @@ ul,ol{list-style:none}
 var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
 var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var DPR=Math.min(window.devicePixelRatio||1,2);
-var SIGNUP='https://syncmyskills.ai/auth/signup';
+var SIGNUP='/signup';
 var FACE={AM:'aarav',MS:'meera',KN:'kabir',IP:'ishita',RK:'rohan',SR:'sana',NS:'neha',PR:'priya'};
 function face(ini,sz){return '<img class="ava" src="/photos/people/'+FACE[ini]+'.jpg" alt="" width="'+(sz*2)+'" height="'+(sz*2)+'" loading="lazy" decoding="async" style="--s:'+sz+'px">'}
 function inView(el,cb,margin){if(!('IntersectionObserver' in window)){cb(true);return}var io=new IntersectionObserver(function(es){es.forEach(function(e){cb(e.isIntersecting)})},{rootMargin:margin||'0px'});io.observe(el);return io}
@@ -1408,7 +1408,7 @@ if(innerWidth<760){var _ai=document.getElementById('askIn');if(_ai)_ai.placehold
 var file=$('#file'),askIn=$('#askIn'),meta=$('#askMeta'),metaHTML=meta.innerHTML,metaT;
 function say(txt,cls){clearTimeout(metaT);meta.className='ask-meta '+(cls||'msg');meta.textContent=txt;metaT=setTimeout(function(){meta.className='ask-meta';meta.innerHTML=metaHTML},4200)}
 file.addEventListener('change',function(){var f=file.files[0];if(!f)return;if(f.size>10*1024*1024){file.value='';say('That file is over 10 MB. Try a smaller PDF or Word file.','err');return}askIn.value=f.name;say('Résumé attached. Press "Analyze my résumé" to continue.')});
-$('#ask').addEventListener('submit',function(e){e.preventDefault();var v=askIn.value.trim();if(!v&&!file.files.length){askIn.focus();say('Paste your LinkedIn URL or attach your résumé to start.','err');return}say('Taking you to your free account to finish the analysis…');setTimeout(function(){location.href=SIGNUP},450)});
+$('#ask').addEventListener('submit',function(e){e.preventDefault();var v=askIn.value.trim();if(!v&&!file.files.length){askIn.focus();say('Paste your LinkedIn URL or attach your résumé to start.','err');return}say('Taking you to your free account to finish the analysis…');var q=file.files.length?'file='+encodeURIComponent(file.files[0].name):'profile='+encodeURIComponent(v);setTimeout(function(){location.href=SIGNUP+'?'+q},450)});
 
 /* trust marquee: company logos + roles */
 var LOGOS=[['google','Google',2.23,30],['microsoft','Microsoft',2.39,36],['amazon','Amazon',2.94,30],['deloitte','Deloitte',5.23,22],['meta','Meta',4.9,23],['openai','OpenAI',0,0],['ibm','IBM',2.05,28],['oracle','Oracle',2.83,19],['dropbox','Dropbox',2.31,36],['fedex','FedEx',3.24,26]];

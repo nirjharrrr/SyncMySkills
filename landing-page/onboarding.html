@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Set up your profile · SyncMySkills</title>
+<meta name="description" content="Tell SyncMySkills what you want next and get matched to roles that fit.">
+<meta name="theme-color" content="#F8F5EA">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/brand/favicons/favicon.ico" sizes="any">
+<link rel="icon" href="/brand/favicons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/favicons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="/brand/tokens/brand.css">
+<link rel="stylesheet" href="/auth/auth.css">
+</head>
+<body>
+<div class="ob">
+  <header class="ob-top">
+    <div class="ob-bar">
+      <a href="/" class="logo" aria-label="SyncMySkills home"><img src="/brand/logos/logo-ink.svg" alt="SyncMySkills" width="109" height="22"></a>
+      <ol class="ob-steps" id="steps" aria-label="Progress">
+        <li class="on"><span class="n"><span>1</span></span><span class="t">About you</span></li>
+        <li><span class="n"><span>2</span></span><span class="t">Résumé</span></li>
+        <li><span class="n"><span>3</span></span><span class="t">Roles</span></li>
+        <li><span class="n"><span>4</span></span><span class="t">Location</span></li>
+      </ol>
+      <a href="/" class="ob-exit" id="exit">Save and exit</a>
+    </div>
+    <div class="ob-prog"><i id="prog"></i></div>
+  </header>
+
+  <div class="ob-body" id="body">
+    <form class="ob-form" id="ob" novalidate>
+
+      <!-- Step 1: goal + experience -->
+      <section data-step="1" aria-labelledby="s1h">
+        <p class="ob-k"><i></i>Step 1 of 4</p>
+        <h1 class="display ob-h" id="s1h"><span id="hi">Welcome.</span> What brings you here?</h1>
+        <p class="ob-sub">We'll use this to rank roles and tailor your report. You can change it later.</p>
+        <div class="ob-sec">
+          <div class="opts" role="radiogroup" aria-label="Your goal">
+            <label class="opt"><input type="radio" name="goal" value="Find my next role"><span class="oi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h12M11 5.5l4.5 4.5-4.5 4.5"/></svg></span><span><b>Find my next role</b><span>I'm working and ready for a move.</span></span><span class="tick"></span></label>
+            <label class="opt"><input type="radio" name="goal" value="Land my first job"><span class="oi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L2.5 7 10 11l7.5-4z"/><path d="M5.5 8.6v3.9c0 1.4 2 2.5 4.5 2.5s4.5-1.1 4.5-2.5V8.6"/></svg></span><span><b>Land my first job</b><span>I'm a student or recent graduate.</span></span><span class="tick"></span></label>
+            <label class="opt"><input type="radio" name="goal" value="Switch careers"><span class="oi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h11l-3-3M16 13.5H5l3 3"/></svg></span><span><b>Switch careers</b><span>I want to move into a new field.</span></span><span class="tick"></span></label>
+            <label class="opt"><input type="radio" name="goal" value="Return to work"><span class="oi"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10a6.5 6.5 0 1 0 1.9-4.6"/><path d="M3.5 3.5v3.4h3.4"/></svg></span><span><b>Return to work</b><span>I'm coming back after a break.</span></span><span class="tick"></span></label>
+          </div>
+          <p class="msg" id="goalErr"></p>
+        </div>
+        <div class="ob-sec">
+          <span class="lab" id="expL">Years of work experience</span>
+          <div class="seg" role="radiogroup" aria-labelledby="expL">
+            <label><input type="radio" name="exp" value="Student"><span>Student</span></label>
+            <label><input type="radio" name="exp" value="0–2 years"><span>0–2 years</span></label>
+            <label><input type="radio" name="exp" value="3–5 years"><span>3–5 years</span></label>
+            <label><input type="radio" name="exp" value="6–10 years"><span>6–10 years</span></label>
+            <label><input type="radio" name="exp" value="10+ years"><span>10+ years</span></label>
+          </div>
+          <p class="msg" id="expErr"></p>
+        </div>
+      </section>
+
+      <!-- Step 2: résumé -->
+      <section data-step="2" aria-labelledby="s2h" hidden>
+        <p class="ob-k"><i></i>Step 2 of 4</p>
+        <h1 class="display ob-h" id="s2h">Add your résumé</h1>
+        <p class="ob-sub">We read it like a recruiter would: your skills, experience and the keywords hiring systems look for.</p>
+        <div class="ob-sec">
+          <label class="drop" id="drop">
+            <input type="file" id="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="dropHelp">
+            <span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5V4.5M7.5 9L12 4.5 16.5 9"/><path d="M4.5 15v2.5a2 2 0 002 2h11a2 2 0 002-2V15"/></svg></span>
+            <b>Drop your résumé here, or <span class="link" style="display:inline;font-size:16px">browse</span></b>
+            <span id="dropHelp">PDF or Word, up to 5 MB</span>
+          </label>
+          <div class="file" id="fileRow" hidden>
+            <span class="fi" id="fileIc">PDF</span>
+            <span class="fm"><b id="fileName"></b><span id="fileMeta"></span><span class="fbar"><i id="fileBar"></i></span></span>
+            <button type="button" class="rm" id="fileRm" aria-label="Remove file"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+          </div>
+          <p class="msg" id="fileErr"></p>
+          <p class="or" style="margin:24px 0 0">or use your LinkedIn profile</p>
+          <div class="fld" style="margin-top:14px">
+            <label class="sr" for="li">LinkedIn profile URL</label>
+            <div class="alt-row"><div class="inp"><svg class="li" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><input id="li" type="url" inputmode="url" autocomplete="url" placeholder="linkedin.com/in/your-name"></div></div>
+          </div>
+          <p class="privacy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1.6"/><path d="M5.3 7V5.2a2.7 2.7 0 015.4 0V7"/></svg><span>Your résumé stays private. Employers only see it if you choose to apply.</span></p>
+        </div>
+      </section>
+
+      <!-- Step 3: roles -->
+      <section data-step="3" aria-labelledby="s3h" hidden>
+        <p class="ob-k"><i></i>Step 3 of 4</p>
+        <h1 class="display ob-h" id="s3h">What roles are you aiming for?</h1>
+        <p class="ob-sub">Add up to five. We'll also suggest close matches you might not have considered.</p>
+        <div class="ob-sec">
+          <label class="lab" for="roleIn">Target roles</label>
+          <div class="rel">
+            <div class="chips" id="roleChips"><input id="roleIn" type="text" autocomplete="off" placeholder="Start typing, e.g. Product Analyst" role="combobox" aria-expanded="false" aria-controls="roleAc" aria-autocomplete="list"></div>
+            <div class="ac-list" id="roleAc" role="listbox" hidden></div>
+          </div>
+          <div class="sugg" id="roleSugg"></div>
+          <p class="msg" id="roleErr"></p>
+        </div>
+      </section>
+
+      <!-- Step 4: where + how -->
+      <section data-step="4" aria-labelledby="s4h" hidden>
+        <p class="ob-k"><i></i>Step 4 of 4</p>
+        <h1 class="display ob-h" id="s4h">Where do you want to work?</h1>
+        <p class="ob-sub">Pick cities anywhere in the world, or go fully remote.</p>
+        <div class="ob-sec">
+          <label class="lab" for="locIn">Locations</label>
+          <div class="rel">
+            <div class="chips" id="locChips"><input id="locIn" type="text" autocomplete="off" placeholder="Add a city or Remote" role="combobox" aria-expanded="false" aria-controls="locAc" aria-autocomplete="list"></div>
+            <div class="ac-list" id="locAc" role="listbox" hidden></div>
+          </div>
+          <div class="sugg" id="locSugg"></div>
+          <p class="msg" id="locErr"></p>
+        </div>
+        <div class="ob-sec">
+          <span class="lab" id="modeL">Work setup <em>(pick any)</em></span>
+          <div class="seg" aria-labelledby="modeL">
+            <label><input type="checkbox" name="mode" value="Remote" checked><span>Remote</span></label>
+            <label><input type="checkbox" name="mode" value="Hybrid" checked><span>Hybrid</span></label>
+            <label><input type="checkbox" name="mode" value="On-site"><span>On-site</span></label>
+          </div>
+          <p class="msg" id="modeErr"></p>
+        </div>
+        <div class="ob-sec">
+          <span class="lab" id="whenL">When could you start?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="whenL">
+            <label><input type="radio" name="when" value="Right away"><span>Right away</span></label>
+            <label><input type="radio" name="when" value="Within a month" checked><span>Within a month</span></label>
+            <label><input type="radio" name="when" value="In 2–3 months"><span>In 2–3 months</span></label>
+            <label><input type="radio" name="when" value="Just exploring"><span>Just exploring</span></label>
+          </div>
+        </div>
+        <div class="ob-sec">
+          <label class="toggle"><span><b>Open to relocating</b><span>Include roles that would mean moving cities or countries.</span></span><input type="checkbox" id="reloc"></label>
+        </div>
+      </section>
+
+      <div class="ob-nav" id="nav">
+        <button type="button" class="btn btn-ghost" id="backBtn" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M10 3.5L5.5 8l4.5 4.5"/></svg>Back</button>
+        <span class="sp"></span>
+        <button type="button" class="btn btn-ghost" id="skipBtn" hidden>I don't have one yet</button>
+        <button class="cbtn" type="submit" id="nextBtn"><span class="tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg><span class="spin"></span></span><span class="lbl">Continue</span><kbd>↵</kbd></button>
+      </div>
+    </form>
+
+    <!-- Live profile preview -->
+    <aside class="pv" aria-label="Your profile so far">
+      <p class="pv-k">Your profile</p>
+      <div class="pv-me"><span class="pv-av" id="pvAv">Y</span><div><b id="pvName">Your profile</b><span id="pvGoal">Tell us what you're looking for</span></div></div>
+      <div class="pv-list">
+        <div class="pv-row" id="pvExpR"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="10.5" rx="2"/><path d="M7 6V4.5h6V6"/></svg><div><small>Experience</small><span class="v empty" id="pvExp">Not set</span></div></div>
+        <div class="pv-row" id="pvCvR"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 2.5H6a1.5 1.5 0 00-1.5 1.5v12A1.5 1.5 0 006 17.5h8a1.5 1.5 0 001.5-1.5V6.5z"/><path d="M11.5 2.5v4h4"/></svg><div><small>Résumé</small><span class="v empty" id="pvCv">Not added</span></div></div>
+        <div class="pv-row" id="pvRolesR"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="3.2"/></svg><div><small>Target roles</small><span class="v empty" id="pvRoles">None yet</span></div></div>
+        <div class="pv-row" id="pvLocR"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17.5s5.5-5 5.5-9.2a5.5 5.5 0 00-11 0c0 4.2 5.5 9.2 5.5 9.2z"/><circle cx="10" cy="8.3" r="2"/></svg><div><small>Locations</small><span class="v empty" id="pvLoc">None yet</span></div></div>
+      </div>
+      <div class="pv-meter"><div class="top"><span>Profile strength</span><b id="pvPct">10%</b></div><div class="bar"><i id="pvBar" style="width:10%"></i></div></div>
+    </aside>
+  </div>
+
+  <!-- Analysing -->
+  <div class="ob-body wide" id="analysing" hidden>
+    <div class="an" aria-live="polite">
+      <div class="an-ring"><svg viewBox="0 0 132 132"><circle class="bg" cx="66" cy="66" r="58"/><circle class="fg" id="ring" cx="66" cy="66" r="58" stroke-dasharray="364.4" stroke-dashoffset="364.4"/></svg><b id="ringPct">0%</b></div>
+      <h1 class="display ob-h">Reading your profile</h1>
+      <p class="ob-sub" style="margin:12px auto 0">This usually takes under a minute. Hang tight.</p>
+      <ul class="an-steps" id="anSteps">
+        <li><i></i>Reading your résumé</li>
+        <li><i></i>Mapping your skills</li>
+        <li><i></i>Checking how hiring systems see it</li>
+        <li><i></i>Ranking roles that fit</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="ob-body wide" id="results" hidden>
+    <div class="res">
+      <div class="res-head">
+        <p class="ob-k" style="justify-content:center"><i></i>Your first report</p>
+        <h1 class="display ob-h" id="resH">You're a strong fit for 24 open roles</h1>
+        <p class="ob-sub" style="margin:12px auto 0">Here's where you stand today, and the few skills that would open up even more.</p>
+      </div>
+      <div class="res-grid">
+        <div class="rc">
+          <h3>Résumé score</h3>
+          <div class="score"><b id="scoreN">0</b><span>/ 100</span></div>
+          <p class="score-note">Stronger than most profiles we see for these roles.</p>
+          <ul class="sb">
+            <li><div class="r"><span>Skills match</span><b>84</b></div><div class="bar"><i style="width:84%"></i></div></li>
+            <li><div class="r"><span>Experience</span><b>78</b></div><div class="bar"><i style="width:78%"></i></div></li>
+            <li><div class="r"><span>Formatting</span><b>90</b></div><div class="bar"><i style="width:90%"></i></div></li>
+            <li><div class="r"><span>Keywords</span><b>62</b></div><div class="bar o"><i style="width:62%"></i></div></li>
+          </ul>
+        </div>
+        <div class="rc">
+          <h3>Top matches</h3>
+          <div class="roles" id="roles"></div>
+          <h3 style="margin-top:24px">Skills to close the gap</h3>
+          <div class="gaps" id="gaps"></div>
+        </div>
+      </div>
+      <div class="res-cta">
+        <a class="cbtn" id="dash" href="#"><span class="tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span><span class="lbl">See all my matches</span><kbd>↵</kbd></a>
+        <button type="button" class="btn btn-line" id="editPrefs" style="height:56px;padding:0 22px">Edit my preferences</button>
+      </div>
+      <p class="demo-note">Preview with sample results. The real report is built from your résumé.</p>
+    </div>
+  </div>
+</div>
+
+<script src="/auth/auth.js"></script>
+<script src="/auth/onboarding.js"></script>
+</body>
+</html>

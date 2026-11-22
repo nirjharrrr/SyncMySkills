@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Create your account · SyncMySkills</title>
+<meta name="description" content="Create a free SyncMySkills account and get matched to roles that fit your skills.">
+<meta name="theme-color" content="#F8F5EA">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/brand/favicons/favicon.ico" sizes="any">
+<link rel="icon" href="/brand/favicons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/favicons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="/brand/tokens/brand.css">
+<link rel="stylesheet" href="/auth/auth.css">
+</head>
+<body>
+<div class="au">
+  <main class="au-main">
+    <header class="au-top">
+      <a href="/" class="logo" aria-label="SyncMySkills home"><img src="/brand/logos/logo-ink.svg" alt="SyncMySkills" width="109" height="22"></a>
+      <p class="au-alt"><span class="hide-s">Have an account? </span><a class="link" href="/signin">Sign in</a></p>
+    </header>
+
+    <div class="au-box">
+      <!-- 1. Create account -->
+      <section data-view="create" aria-labelledby="h-create">
+        <h1 class="display au-h" id="h-create">Create your free account</h1>
+        <p class="au-sub">Get matched to roles that fit your skills, anywhere in the world. It takes about two minutes.</p>
+        <div class="alert ok" id="carry" hidden style="margin-top:24px"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg><span>We'll analyse <b id="carryWhat"></b> as soon as you're in.</span></div>
+
+        <div class="sso">
+          <button class="btn btn-line btn-block" type="button" data-sso="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>Continue with Google</button>
+          <button class="btn btn-line btn-block" type="button" data-sso="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Continue with LinkedIn</button>
+        </div>
+        <p class="or">or sign up with email</p>
+
+        <form class="form" id="fCreate" novalidate>
+          <div class="alert" id="existsErr" role="alert" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="6.4"/><path d="M8 4.8v3.6M8 11.1v.1"/></svg><span>There's already an account with this email. <a class="link" href="/signin">Sign in instead</a>.</span></div>
+          <div class="fld">
+            <label class="lab" for="suName">Full name</label>
+            <div class="inp"><input id="suName" type="text" name="name" autocomplete="name" placeholder="Alex Morgan" required data-autofocus></div>
+          </div>
+          <div class="fld">
+            <label class="lab" for="suEmail">Email</label>
+            <div class="inp"><input id="suEmail" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></div>
+          </div>
+          <div class="fld">
+            <label class="lab" for="suPw">Password</label>
+            <div class="inp has-btn"><input id="suPw" type="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" required aria-describedby="suRules"><button type="button" class="eye" aria-label="Show password" aria-pressed="false"><svg class="on" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.8 10S4.8 4.2 10 4.2 18.2 10 18.2 10 15.2 15.8 10 15.8 1.8 10 1.8 10z"/><circle cx="10" cy="10" r="2.6"/></svg><svg class="off" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 4.4A8 8 0 0110 4.2c5.2 0 8.2 5.8 8.2 5.8a14 14 0 01-2.1 2.9M5.4 5.6A13.6 13.6 0 001.8 10S4.8 15.8 10 15.8a7.7 7.7 0 004.4-1.4M8.2 8.2a2.6 2.6 0 003.6 3.6M2.5 2.5l15 15"/></svg></button></div>
+            <div class="pw-meter" id="suMeter" role="img" aria-label="Password strength"><i></i><i></i><i></i><i></i></div>
+            <ul class="pw-rules" id="suRules"><li data-r="len">8+ characters</li><li data-r="mix">Upper and lower case</li><li data-r="num">A number</li><li data-r="sym">A symbol</li></ul>
+          </div>
+          <label class="check"><input type="checkbox" name="updates"> Email me new matches and job tips. You can turn this off any time.</label>
+          <button class="cbtn block" type="submit"><span class="tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg><span class="spin"></span></span><span class="lbl">Create account</span><kbd>↵</kbd></button>
+          <p class="legal">By creating an account, you agree to the SyncMySkills Terms of Service and <a href="https://syncmyskills.ai/privacy">Privacy Policy</a>.</p>
+        </form>
+        <p class="below">Already have an account? <a class="link" href="/signin">Sign in</a></p>
+      </section>
+
+      <!-- 2. Verify email -->
+      <section data-view="verify" aria-labelledby="h-verify" hidden>
+        <button type="button" class="back" data-go="create"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"/></svg>Back</button>
+        <div class="mail-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></div>
+        <h1 class="display au-h" id="h-verify">Check your email</h1>
+        <p class="au-sub">Enter the 6-digit code we sent to <b id="verifyTo">your email</b>.</p>
+        <form id="fVerify" novalidate>
+          <fieldset style="border:0">
+            <legend class="sr">Verification code</legend>
+            <div class="otp" id="otp">
+              <input inputmode="numeric" autocomplete="one-time-code" maxlength="6" aria-label="Digit 1" data-autofocus>
+              <input inputmode="numeric" maxlength="1" aria-label="Digit 2">
+              <input inputmode="numeric" maxlength="1" aria-label="Digit 3">
+              <input inputmode="numeric" maxlength="1" aria-label="Digit 4">
+              <input inputmode="numeric" maxlength="1" aria-label="Digit 5">
+              <input inputmode="numeric" maxlength="1" aria-label="Digit 6">
+            </div>
+          </fieldset>
+          <p class="msg" id="otpErr" role="alert" style="margin-top:12px"></p>
+          <button class="cbtn block" type="submit" id="verifyBtn" disabled style="margin-top:24px"><span class="tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span class="spin"></span></span><span class="lbl">Verify email</span><kbd>↵</kbd></button>
+        </form>
+        <p class="resend">Didn't get it? <button type="button" id="resendCode">Resend code</button></p>
+        <p class="below" style="margin-top:12px">Wrong email? <button type="button" class="link" data-go="create">Change it</button></p>
+      </section>
+    </div>
+
+    <footer class="au-foot">
+      <span>© 2026 SyncMySkills</span>
+      <a href="https://syncmyskills.ai/privacy">Privacy</a>
+      <a href="https://syncmyskills.ai/contact">Help</a>
+      <a href="https://syncmyskills.ai/employers/">For hiring teams</a>
+    </footer>
+  </main>
+
+  <aside class="au-side" aria-hidden="true">
+    <canvas class="px t" data-acc="#79D5F5,#F8F5EA,#2A6BE6"></canvas>
+    <canvas class="px b" data-acc="#79D5F5,#2A6BE6,#8CEBF6"></canvas>
+    <div class="side-in">
+      <h2 class="display side-h">See where you fit before you apply.</h2>
+      <p class="side-sub">Upload your résumé once. Get roles ranked by how well you match, and the skills that close the gap.</p>
+      <div class="stack"></div>
+      <div class="side-foot">
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Free for job seekers</span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>No card needed</span>
+        <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Your data stays private</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script src="/auth/auth.js"></script>
+<script>
+(function(){
+var $ = SMS.$, $$ = SMS.$$;
+SMS.panel();
+$$('[data-go]').forEach(function(b){ b.addEventListener('click', function(){ SMS.show(b.dataset.go); }); });
+
+/* Carry over what the person typed on the landing page (/signup?profile=...) */
+var q = new URLSearchParams(location.search), prof = q.get('profile'), fname = q.get('file');
+if (prof || fname){
+  var what = fname || prof.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+  $('#carryWhat').textContent = what.length > 42 ? what.slice(0, 40) + '…' : what;
+  $('#carry').hidden = false;
+  SMS.state({ profile: prof || '', fileName: fname || '' });
+}
+SMS.show('create');
+
+/* Single sign-on. TODO(api): start the OAuth flow. LinkedIn can also prefill the profile. */
+$$('[data-sso]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var html = b.innerHTML; b.disabled = true;
+    b.lastChild.textContent = 'Connecting to ' + b.dataset.sso + '…';
+    SMS.state({ via: b.dataset.sso, name: '', email: '' });
+    setTimeout(function(){ location.href = SMS.ROUTES.onboarding; }, 900);
+    setTimeout(function(){ b.innerHTML = html; b.disabled = false; }, 4000);
+  });
+});
+
+/* Create account */
+var rules = SMS.strength($('#suPw'), $('#suMeter'), $('#suRules'));
+SMS.emailSuggest($('#suEmail'));
+$('#fCreate').addEventListener('submit', function(e){
+  e.preventDefault();
+  var n = $('#suName'), em = $('#suEmail'), pw = $('#suPw'), ok = true, btn = $('button[type=submit]', this), r = rules();
+  $('#existsErr').hidden = true;
+  if (n.value.trim().length < 2) ok = SMS.fieldError(n, 'Enter your name.') && ok; else SMS.fieldError(n);
+  if (!SMS.isEmail(em.value.trim())) ok = SMS.fieldError(em, em.value ? 'Enter a valid email, like name@example.com.' : 'Enter your email.') && ok; else SMS.fieldError(em);
+  if (!r.len) ok = SMS.fieldError(pw, 'Use at least 8 characters.') && ok;
+  else if ((r.mix ? 1 : 0) + (r.num ? 1 : 0) + (r.sym ? 1 : 0) < 1) ok = SMS.fieldError(pw, 'Add a number, a symbol or mixed case to make it stronger.') && ok;
+  else SMS.fieldError(pw);
+  if (!ok){ $('.fld.bad input', this).focus(); return; }
+  SMS.busy(btn, true, 'Creating your account…');
+  /* TODO(api): create the account and send a 6-digit code. If the email exists: SMS.busy(btn,false); $('#existsErr').hidden=false; */
+  SMS.wait(900).then(function(){
+    SMS.busy(btn, false);
+    SMS.state({ name: n.value.trim(), email: em.value.trim(), via: 'email' });
+    $('#verifyTo').textContent = em.value.trim();
+    SMS.show('verify'); SMS.countdown($('#resendCode'), 30);
+  });
+});
+
+/* Verify email. Demo: any 6 digits work except 000000, which shows the error state. */
+var vb = $('#verifyBtn');
+var otp = SMS.otp($('#otp'), function(){ vb.disabled = false; submitCode(); });
+$$('#otp input').forEach(function(i){ i.addEventListener('input', function(){ vb.disabled = otp.code().length < 6; $('#otpErr').style.display = 'none'; }); });
+function submitCode(){
+  var c = otp.code(); if (c.length < 6) return;
+  SMS.busy(vb, true, 'Verifying…');
+  /* TODO(api): check the code */
+  SMS.wait(800).then(function(){
+    if (c === '000000'){
+      SMS.busy(vb, false); vb.disabled = true;
+      var m = $('#otpErr'); m.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.4"/><path d="M8 4.8v3.6M8 11.1v.1"/></svg><span>That code isn\'t right, or it has expired. Check the email and try again.</span>';
+      m.style.display = 'flex'; otp.reset(true); return;
+    }
+    SMS.busy(vb, true, 'Verified');
+    setTimeout(function(){ location.href = SMS.ROUTES.onboarding; }, 300);
+  });
+}
+$('#fVerify').addEventListener('submit', function(e){ e.preventDefault(); submitCode(); });
+$('#resendCode').addEventListener('click', function(){ /* TODO(api): resend */ SMS.countdown(this, 30); });
+
+$$('.fld input').forEach(function(i){ i.addEventListener('input', function(){ if (i.closest('.fld').classList.contains('bad')) SMS.fieldError(i); }); });
+})();
+</script>
+</body>
+</html>

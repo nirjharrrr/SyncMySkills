@@ -180,13 +180,27 @@ ul,ol{list-style:none}
 .ask-meta svg{width:14px;height:14px;color:var(--moss)}
 .ask-meta.msg{color:var(--ink);font-weight:500}
 .ask-meta.err{color:#9A3C00}
-.float-who{position:absolute;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none}
-.float-who.l{left:clamp(24px,6vw,96px);top:58%}
-.float-who.r{right:clamp(24px,6vw,96px);top:42%}
-.float-who .tagx{display:flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 10px;font-size:12px;font-weight:500;box-shadow:var(--sh-md);transition:opacity .35s,transform .35s var(--ease)}
-.float-who .tagx em{font-style:normal;color:var(--muted);font-weight:400}
-.float-who .tagx.swap{opacity:0;transform:translateY(4px)}
-.float-who .ava{--s:64px;box-shadow:0 0 0 4px var(--paper),0 0 0 6px rgba(56,128,255,.45),0 0 0 14px rgba(56,128,255,.1);transition:opacity .35s}
+/* hero crowd: faces pop in around the headline (pattern from unfair.so) */
+.crowd{position:absolute;inset:0;z-index:1;pointer-events:none}
+.cw{position:absolute;transform:translate(-50%,-50%)}
+.cw-in{position:relative;display:block;animation:cw-in .42s cubic-bezier(.22,.98,.3,1.25) both}
+.cw-in.out{animation:cw-out .3s cubic-bezier(.4,0,1,1) both}
+.cw img{display:block;width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 30%;background:var(--sand);box-shadow:0 0 0 3px #fff,0 6px 16px rgba(24,60,160,.16)}
+.cw-ping{position:absolute;inset:0;border-radius:50%;border:2px solid var(--blue);opacity:0;animation:cw-ping .9s cubic-bezier(.2,.7,.3,1) forwards}
+.cw-chip{position:absolute;left:50%;bottom:100%;margin-bottom:12px;display:flex;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px rgba(0,0,0,.06);font-size:13px;line-height:1;color:var(--muted);white-space:nowrap;opacity:0;transform:translateX(-50%);animation:cw-chip 2.4s cubic-bezier(.2,.8,.2,1) .12s forwards}
+.cw-chip i{width:6px;height:6px;border-radius:50%;background:var(--moss);flex:none}
+.cw-chip b{font-weight:600;color:var(--ink)}
+@keyframes cw-in{0%{opacity:0;transform:translateY(8px) scale(.6)}100%{opacity:1;transform:none}}
+@keyframes cw-out{100%{opacity:0;transform:translateY(-6px) scale(.85)}}
+@keyframes cw-ping{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(2.1)}}
+@keyframes cw-chip{0%{opacity:0;transform:translate(-50%,6px) scale(.85)}12%,80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-6px)}}
+@media (max-width:999px){.crowd{display:none}}
+/* first screen: content centred, company strip at the bottom */
+@media (min-width:761px){
+  .hero{min-height:100vh;min-height:100svh;padding-top:68px}
+  .hero-in{display:flex;flex-direction:column;justify-content:center;padding-top:40px;padding-bottom:48px}
+  .hero-in>.ask{width:100%}
+}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* dither bands */
@@ -565,7 +579,7 @@ ul,ol{list-style:none}
 /* =========================================================
    Logo + roles marquee
    ========================================================= */
-.trust{position:relative;margin-top:clamp(56px,8vh,96px);padding:28px 0 36px;border-top:1px solid var(--line)}
+.trust{position:relative;margin-top:0;padding:8px 0 36px}
 .trust .cap{text-align:center;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:18px}
 .trust .cap b{color:var(--ink);font-weight:600}
 .lane{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -897,7 +911,6 @@ ul,ol{list-style:none}
   .bx-big{grid-template-columns:1fr}
   .bx-row{grid-template-columns:1fr}
   .plans{grid-template-columns:1fr;max-width:560px}
-  .float-who{display:none}
 }
 @media (max-width:760px){
   .job .co{width:54px!important}
@@ -1114,10 +1127,9 @@ ul,ol{list-style:none}
       <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Report in about 2 minutes</span>
     </div>
   </div>
-  <div class="float-who l" id="whoL" aria-hidden="true"><div class="tagx"><span class="dot"></span><span class="nm">Meera</span> <em>matched</em></div><img class="ava" src="/photos/people/meera.jpg" alt="" width="128" height="128" fetchpriority="high"></div>
-  <div class="float-who r" id="whoR" aria-hidden="true"><div class="tagx"><span class="dot"></span><span class="nm">Kabir</span> <em>shortlisted</em></div><img class="ava" src="/photos/people/kabir.jpg" alt="" width="128" height="128" fetchpriority="high"></div>
+  <div class="crowd" id="crowd" aria-hidden="true"></div>
   <div class="trust">
-    <p class="cap">Job seekers get matched to roles at teams like <b>Google, Microsoft and Deloitte</b></p>
+    <p class="cap">Our users get matched to roles at teams like <b>Google, Microsoft and Deloitte</b></p>
     <div class="lane" aria-label="Companies"><div class="track" id="logoTrack"></div></div>
     <div class="lane rev" aria-hidden="true"><div class="track" id="roleTrack"></div></div>
   </div>
@@ -1421,26 +1433,55 @@ var rt='';for(var k2=0;k2<2;k2++)roles.forEach(function(r,i){rt+='<span class="r
 /* keyboard shortcuts shown on the 3D buttons */
 addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey||e.repeat)return;var t=document.activeElement&&document.activeElement.tagName;if(/^(INPUT|TEXTAREA|SELECT)$/.test(t))return;var k=(e.key||'').toLowerCase();if(k!=='a'&&k!=='d'&&k!=='f')return;var vis=$$('.cbtn[data-k="'+k+'"]').filter(function(b){var r=b.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.width>0});if(!vis.length)return;e.preventDefault();vis[0].classList.add('kpress');setTimeout(function(){location.href=vis[0].href},140)});
 
-/* floating hero tags */
-var flt=[['Meera','matched','meera'],['Aarav','shortlisted','aarav'],['Ishita','got an interview','ishita'],['Rohan','matched','rohan'],['Kabir','applied','kabir'],['Sana','matched','sana']],fi=0;
-function cycleWho(el,off){var t=el.querySelector('.tagx'),a=el.querySelector('.ava');setInterval(function(){if(document.hidden)return;t.classList.add('swap');a.style.opacity=.2;setTimeout(function(){var f=flt[(fi+off)%flt.length];t.querySelector('.nm').textContent=f[0];t.querySelector('em').textContent=f[1];a.src='/photos/people/'+f[2]+'.jpg';t.classList.remove('swap');a.style.opacity=1},350)},3600)}
-flt.forEach(function(f){var im=new Image();im.src='/photos/people/'+f[2]+'.jpg'});
-if(!RM){cycleWho($('#whoL'),0);cycleWho($('#whoR'),3);setInterval(function(){fi++},3600)}
-
-/* hero pixel field */
+/* hero: faces pop in around the headline, each sends a pixel ripple across the field */
 (function(){
-  var c=$('#heroFx'),x=c.getContext('2d'),W,H,P=[],run=true,G=6;
-  var pal=['56,128,255','121,213,245','255,153,63','103,158,65'];
+  var hero=$('.hero'),c=$('#heroFx'),x=c.getContext('2d'),crowd=$('#crowd'),W=0,H=0,G=6,run=true,looping=false,R=[],dust=[],live=[];
+  var PPL=[['Meera','matched','meera'],['Aarav','shortlisted','aarav'],['Ishita','got an interview','ishita'],['Rohan','got an offer','rohan'],['Kabir','applied','kabir'],['Sana','matched','sana'],['Neha','shortlisted','neha'],['Priya','got an offer','priya']];
+  PPL.forEach(function(p){var im=new Image();im.src='/photos/people/'+p[2]+'.jpg'});
+  function hash(a,b,k){var h=Math.sin(a*127.1+b*311.7+k*74.7)*43758.5453;return h-Math.floor(h)}
   function size(){W=c.offsetWidth;H=c.offsetHeight;c.width=Math.round(W*DPR);c.height=Math.round(H*DPR);x.setTransform(DPR,0,0,DPR,0,0);
-    P=[];var small=W<1081,N=small?0:200;
-    var cs=small?[[.5,.97,.55]]:[[.1,.64,1],[.9,.4,1]];
-    for(var i=0;i<N;i++){var cl=cs[i%cs.length];P.push({cx:cl[0],cy:cl[1],a:Math.random()*6.28,r:(36+Math.random()*120)*cl[2],s:(.0012+Math.random()*.0035)*(Math.random()<.5?-1:1),e:.5+Math.random()*.35,col:pal[i%pal.length],al:.12+Math.random()*.45})}}
-  function draw(){x.clearRect(0,0,W,H);
-    for(var i=0;i<P.length;i++){var p=P[i];if(!RM)p.a+=p.s;var px=p.cx*W+Math.cos(p.a)*p.r,py=p.cy*H+Math.sin(p.a)*p.r*p.e;
-      x.fillStyle='rgba('+p.col+','+p.al+')';x.fillRect(Math.round(px/G)*G,Math.round(py/G)*G,G-1,G-1)}
-    if(run&&!RM)requestAnimationFrame(draw)}
-  size();draw();addEventListener('resize',debounce(function(){size();if(RM)draw()},150));
-  inView(c,function(v){var w=run;run=v;if(v&&!w&&!RM)draw()});
+    dust=[];if(W<761)return;var n=Math.round(W*H/2600);
+    for(var i=0;i<n;i++){var px=Math.random()*W,py=Math.random()*H,e=Math.abs(px/W-.5)*2;if(Math.random()>Math.pow(e,1.8))continue;
+      dust.push({x:Math.floor(px/G)*G,y:Math.floor(py/G)*G,a:.04+Math.random()*.13,s:Math.random()*6.28,c:Math.random()<.78?'56,128,255':'121,213,245'})}}
+  function frame(t){x.clearRect(0,0,W,H);
+    for(var i=0;i<dust.length;i++){var d=dust[i];x.fillStyle='rgba('+d.c+','+(RM?d.a:d.a*(.55+.45*Math.sin(t/1100+d.s)))+')';x.fillRect(d.x,d.y,G-1,G-1)}
+    for(var q=R.length-1;q>=0;q--){var r=R[q],p=(t-r.t0)/r.d;if(p>=1){R.splice(q,1);continue}if(p<=0)continue;
+      var e=1-Math.pow(1-p,2.2),rad=8+e*r.m,fade=Math.pow(1-p,1.3);
+      for(var k=0;k<3;k++){var rr=rad-k*G*1.2;if(rr<6)continue;var n=Math.max(10,Math.round(6.283*rr/G)),ring=Math.round(rr/G);
+        x.fillStyle='rgba('+r.c+','+(fade*(.42-k*.12)).toFixed(3)+')';
+        for(var j=0;j<n;j++){if(hash(r.id,ring+k*97,j)>.34)continue;var ang=j/n*6.283;
+          x.fillRect(Math.round((r.x+Math.cos(ang)*rr)/G)*G,Math.round((r.y+Math.sin(ang)*rr)/G)*G,G-1,G-1)}}}
+    if(run&&!RM){requestAnimationFrame(frame)}else looping=false}
+  function kick(){if(!looping&&run&&!RM){looping=true;requestAnimationFrame(frame)}}
+  function box(el){var rg=document.createRange();rg.selectNodeContents(el);var b=rg.getBoundingClientRect();return b.width?b:el.getBoundingClientRect()}
+  function place(){
+    var hr=hero.getBoundingClientRect(),tr=$('.trust').getBoundingClientRect(),blk=$$('.hero-in > *').map(function(el){var b=box(el);return{l:b.left-hr.left-64,t:b.top-hr.top-44,r:b.right-hr.left+64,b:b.bottom-hr.top+44}});
+    var hb=box($('.hero h1')),half=Math.max(hb.width,$('#ask').offsetWidth)/2+56,cx=W/2;var y0=150,y1=tr.top-hr.top-40;if(y1-y0<120)return null;
+    for(var i=0;i<60;i++){var px=44+Math.random()*(W-88),py=y0+Math.random()*(y1-y0),ok=Math.abs(px-cx)>half;
+      for(var k=0;k<blk.length&&ok;k++){var b=blk[k];if(px>b.l&&px<b.r&&py>b.t&&py<b.b)ok=false}
+      for(var m=0;m<live.length&&ok;m++){if(Math.hypot(live[m].x-px,live[m].y-py)<170)ok=false}
+      if(ok)return{x:px,y:py}}
+    return null}
+  function drop(o){var k=live.indexOf(o);if(k>-1)live.splice(k,1);if(o.el.parentNode)o.el.parentNode.removeChild(o.el)}
+  function spawn(){
+    if(!run||document.hidden||W<1000||live.length>=4)return;
+    var pos=place();if(!pos)return;
+    var pool=PPL.filter(function(p){return !live.some(function(l){return l.p===p})}),p=pool[Math.floor(Math.random()*pool.length)];
+    var el=document.createElement('div');el.className='cw';el.style.left=pos.x+'px';el.style.top=pos.y+'px';
+    el.innerHTML='<span class="cw-in"><span class="cw-ping"></span><img src="/photos/people/'+p[2]+'.jpg" alt="" width="96" height="96"><span class="cw-chip"><i></i><b>'+p[0]+'</b>'+p[1]+'</span></span>';
+    crowd.appendChild(el);var o={el:el,p:p,x:pos.x,y:pos.y};live.push(o);
+    if(RM)return;
+    var now=performance.now();
+    R.push({x:pos.x,y:pos.y,t0:now,d:2400,m:Math.min(300,W*.2),c:'56,128,255',id:Math.random()*999});
+    R.push({x:pos.x,y:pos.y,t0:now+420,d:2400,m:Math.min(220,W*.15),c:'121,213,245',id:Math.random()*999});
+    kick();
+    setTimeout(function(){el.firstChild.classList.add('out');setTimeout(function(){drop(o)},320)},4400+Math.random()*2800)}
+  function clearCrowd(){live.slice().forEach(drop);R=[]}
+  size();
+  if(RM){frame(0);setTimeout(function(){spawn();spawn();spawn()},300)}
+  else{kick();[350,900,1500].forEach(function(d){setTimeout(spawn,d)});setInterval(spawn,1250)}
+  addEventListener('resize',debounce(function(){size();clearCrowd();if(RM){frame(0);spawn();spawn();spawn()}},200));
+  inView(hero,function(v){run=v;if(v)kick()});
 })();
 
 /* dither bands (crisp, device-pixel aligned) */
